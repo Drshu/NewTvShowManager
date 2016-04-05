@@ -23,6 +23,7 @@
 		A25F0CCD1CB396B2005E5159 /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = A25F0CC51CB396B2005E5159 /* FMDatabaseQueue.m */; };
 		A25F0CCE1CB396B2005E5159 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = A25F0CC81CB396B2005E5159 /* FMResultSet.m */; };
 		A25F0CCF1CB396B2005E5159 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A25F0CC91CB396B2005E5159 /* Info.plist */; };
+		A25F0CD21CB3AD35005E5159 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A25F0CD11CB3AD35005E5159 /* MasterViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +74,8 @@
 		A25F0CC71CB396B2005E5159 /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
 		A25F0CC81CB396B2005E5159 /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
 		A25F0CC91CB396B2005E5159 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A25F0CD01CB3AD35005E5159 /* MasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
+		A25F0CD11CB3AD35005E5159 /* MasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +131,8 @@
 			children = (
 				A25F0C881CB39348005E5159 /* AppDelegate.h */,
 				A25F0C891CB39348005E5159 /* AppDelegate.m */,
+				A25F0CD01CB3AD35005E5159 /* MasterViewController.h */,
+				A25F0CD11CB3AD35005E5159 /* MasterViewController.m */,
 				A25F0C8B1CB39348005E5159 /* ViewController.h */,
 				A25F0C8C1CB39348005E5159 /* ViewController.m */,
 				A25F0C8E1CB39348005E5159 /* Main.storyboard */,
@@ -336,6 +341,7 @@
 				A25F0C871CB39348005E5159 /* main.m in Sources */,
 				A25F0CCA1CB396B2005E5159 /* FMDatabase.m in Sources */,
 				A25F0CCE1CB396B2005E5159 /* FMResultSet.m in Sources */,
+				A25F0CD21CB3AD35005E5159 /* MasterViewController.m in Sources */,
 				A25F0CCB1CB396B2005E5159 /* FMDatabaseAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

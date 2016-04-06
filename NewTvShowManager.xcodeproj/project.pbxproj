@@ -24,6 +24,7 @@
 		A25F0CCE1CB396B2005E5159 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = A25F0CC81CB396B2005E5159 /* FMResultSet.m */; };
 		A25F0CCF1CB396B2005E5159 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A25F0CC91CB396B2005E5159 /* Info.plist */; };
 		A25F0CD21CB3AD35005E5159 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A25F0CD11CB3AD35005E5159 /* MasterViewController.m */; };
+		A26F272A1CB4B56F0004CEF5 /* DataFromDataBase.m in Sources */ = {isa = PBXBuildFile; fileRef = A26F27291CB4B56F0004CEF5 /* DataFromDataBase.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +77,8 @@
 		A25F0CC91CB396B2005E5159 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A25F0CD01CB3AD35005E5159 /* MasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
 		A25F0CD11CB3AD35005E5159 /* MasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
+		A26F27281CB4B56F0004CEF5 /* DataFromDataBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DataFromDataBase.h; path = ../../TvShowManage/TvShowManage/DataFromDataBase.h; sourceTree = "<group>"; };
+		A26F27291CB4B56F0004CEF5 /* DataFromDataBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DataFromDataBase.m; path = ../../TvShowManage/TvShowManage/DataFromDataBase.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +138,8 @@
 				A25F0CD11CB3AD35005E5159 /* MasterViewController.m */,
 				A25F0C8B1CB39348005E5159 /* ViewController.h */,
 				A25F0C8C1CB39348005E5159 /* ViewController.m */,
+				A26F27281CB4B56F0004CEF5 /* DataFromDataBase.h */,
+				A26F27291CB4B56F0004CEF5 /* DataFromDataBase.m */,
 				A25F0C8E1CB39348005E5159 /* Main.storyboard */,
 				A25F0C911CB39348005E5159 /* Assets.xcassets */,
 				A25F0C931CB39348005E5159 /* LaunchScreen.storyboard */,
@@ -342,6 +347,7 @@
 				A25F0CCA1CB396B2005E5159 /* FMDatabase.m in Sources */,
 				A25F0CCE1CB396B2005E5159 /* FMResultSet.m in Sources */,
 				A25F0CD21CB3AD35005E5159 /* MasterViewController.m in Sources */,
+				A26F272A1CB4B56F0004CEF5 /* DataFromDataBase.m in Sources */,
 				A25F0CCB1CB396B2005E5159 /* FMDatabaseAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -568,6 +574,7 @@
 				A25F0CB11CB39348005E5159 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A25F0CB21CB39348005E5159 /* Build configuration list for PBXNativeTarget "NewTvShowManagerTests" */ = {
 			isa = XCConfigurationList;
@@ -576,6 +583,7 @@
 				A25F0CB41CB39348005E5159 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A25F0CB51CB39348005E5159 /* Build configuration list for PBXNativeTarget "NewTvShowManagerUITests" */ = {
 			isa = XCConfigurationList;
@@ -584,6 +592,7 @@
 				A25F0CB71CB39348005E5159 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

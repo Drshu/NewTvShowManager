@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "3BA15E90EEFEB8F9B8899E9C2BD28534A428C984",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "3BA15E90EEFEB8F9B8899E9C2BD28534A428C984" : 0,
+    "0B3828FD60B1F8FAC2FF577AD1479674578CD5E8" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "06F1655C-1114-4F4B-BA53-5B14A60D1C85",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "3BA15E90EEFEB8F9B8899E9C2BD28534A428C984" : "NewTvShowManager\/",
+    "0B3828FD60B1F8FAC2FF577AD1479674578CD5E8" : "TvShowManage\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "NewTvShowManager",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "NewTvShowManager.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/Drshu\/TvShowManage.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "0B3828FD60B1F8FAC2FF577AD1479674578CD5E8"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/Drshu\/NewTvShowManager.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "3BA15E90EEFEB8F9B8899E9C2BD28534A428C984"
+    }
+  ]
+}

@@ -11,7 +11,5 @@
 @interface DetailViewController : UIViewController
 
 @property (strong,nonatomic) NSString *showName;
-@property(strong,nonatomic)  NSString *showIntroduction;
-@property(strong,nonatomic) NSString *lastDate;
-@property(strong,nonatomic) NSString *allDate;
+
 @end

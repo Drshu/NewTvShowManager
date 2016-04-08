@@ -179,7 +179,6 @@ static NSString *SectionsTableIdentifier = @"SectionsTableIdentifier";
 }
 
 
-
 #pragma -
 #pragma UITableView
 
@@ -187,6 +186,9 @@ static NSString *SectionsTableIdentifier = @"SectionsTableIdentifier";
     return [self.nameArray count];
 }
 
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return 1;
+}
 
 -(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:SectionsTableIdentifier];
@@ -201,31 +203,37 @@ static NSString *SectionsTableIdentifier = @"SectionsTableIdentifier";
     cell.textLabel.text =self.nameArray[indexPath.row];
     return cell;
 }
--(NSIndexPath *)tableView:(UITableView *)tableView willDeselectRowAtIndexPath:(NSIndexPath *)indexPath{
-    if (indexPath.row==0) {
-        return nil;//第一行的时候返回nil
-    }else{
-        return indexPath;//传递即将选中的行对应的索引
-    }
-}
+//-(NSIndexPath *)tableView:(UITableView *)tableView willDeselectRowAtIndexPath:(NSIndexPath *)indexPath{
+//    if (indexPath.row==0) {
+//        return nil;//第一行的时候返回nil
+//    }else{
+//        return indexPath;//传递即将选中的行对应的索引
+//    }
+//}
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    NSString *chooseName = self.nameArray[indexPath.row];
+    //NSString *chooseName = self.nameArray[indexPath.row];
+    NSLog(@"tag :: %ld",indexPath.row);
     if(indexPath.row != 0){
-    [self performSegueWithIdentifier:@"showDetail" sender:nil];
-    DetailViewController *detailVC ;
-        detailVC.showName = chooseName;}
+    [self performSegueWithIdentifier:@"showDetail" sender:indexPath];
+}
 
 }
+
 
 #pragma -
 #pragma Navigation
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
-    NSString *name =self.nameArray[indexPath.row];
-    [segue.destinationViewController navigationItem].title = name;
-
-    }
-
+    if ([sender isKindOfClass:[NSIndexPath class]])
+    {
+        NSIndexPath *indexPath = (NSIndexPath *)sender;
+        if ([segue.destinationViewController isKindOfClass:[DetailViewController class]]) {
+            DetailViewController *aDetailVC = (DetailViewController*)segue.destinationViewController;
+            NSString *name =self.nameArray[indexPath.row];
+            aDetailVC.title = name;
+            aDetailVC.showName = name;
+        }
+}
+}
 @end

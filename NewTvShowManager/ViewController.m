@@ -9,12 +9,14 @@
 #import "ViewController.h"
 #import "FMDB.h"
 #import "DataFromDataBase.h"
+#import "DetailViewController.h"
 
 static NSString *SectionsTableIdentifier = @"SectionsTableIdentifier";
 @interface ViewController ()
 @property (nonatomic, strong) NSMutableArray *nameArray;
 @property(nonatomic,strong)FMDatabase *db;
-@property(nonatomic,strong)UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+
 @end
 
 @implementation ViewController
@@ -36,8 +38,6 @@ static NSString *SectionsTableIdentifier = @"SectionsTableIdentifier";
     UIEdgeInsets contentInset = tableView.contentInset;
     contentInset.top = 20;//调整表视图顶部边缘值
     [tableView setContentInset:contentInset];
-    
-
 
 }
 
@@ -74,8 +74,16 @@ static NSString *SectionsTableIdentifier = @"SectionsTableIdentifier";
         }
     self.db = db;
     [self query];
-
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.tableView reloadData];
+    });
 }
+
+-(void)viewDidAppear:(BOOL)animated{
+    [self.tableView reloadData];//可以重新加载表视图，因为在视图切换的时候，可能有需要更新的东西，例如收藏的内容
+    
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -83,9 +91,7 @@ static NSString *SectionsTableIdentifier = @"SectionsTableIdentifier";
 }
 
 -(void)query{
-//    NSString *doc=[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
-//    NSString *fileName=[doc stringByAppendingPathComponent:@"tvShow.sqlite"];
-//    FMDatabase *db=[FMDatabase databaseWithPath:fileName];
+
     self.nameArray = [[NSMutableArray alloc]init];
 
         // 1.执行查询语句
@@ -101,11 +107,14 @@ static NSString *SectionsTableIdentifier = @"SectionsTableIdentifier";
         }
         [[DataFromDataBase shareFromDataBase].nameArrayFromClass arrayByAddingObjectsFromArray:self.nameArray];
         NSLog(@"self.nameArray == %@",self.nameArray);
+
     
 }
 
 
-
+- (void)alertView:(UIAlertController *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    [self.tableView reloadData];
+}
 
 -(void)insertNewObject{
     UIAlertController *alert =
@@ -143,13 +152,17 @@ static NSString *SectionsTableIdentifier = @"SectionsTableIdentifier";
                                                              [self creatData:name
                                                            creatIntroduction:introduction
                                                                    creatDate:lastDate];
-                                                             
+                                                                 
                                                          }];
     [alert addAction:cancelAction];
     [alert addAction:creatAction];
     
+
+
     [self presentViewController:alert animated:YES completion:nil];
-    [self.tableView reloadData];
+    [self query];
+    //[self alertView:alert clickedButtonAtIndex:0];
+
 }
 
 -(void)creatData:(NSString*)name creatIntroduction:(NSString*)introduction creatDate:(NSString *) lastDate{
@@ -196,5 +209,23 @@ static NSString *SectionsTableIdentifier = @"SectionsTableIdentifier";
     }
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    NSString *chooseName = self.nameArray[indexPath.row];
+    if(indexPath.row != 0){
+    [self performSegueWithIdentifier:@"showDetail" sender:nil];
+    DetailViewController *detailVC ;
+        detailVC.showName = chooseName;}
+
+}
+
+#pragma -
+#pragma Navigation
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
+    NSString *name =self.nameArray[indexPath.row];
+    [segue.destinationViewController navigationItem].title = name;
+
+    }
 
 @end

@@ -25,6 +25,7 @@
 		A25F0CCF1CB396B2005E5159 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A25F0CC91CB396B2005E5159 /* Info.plist */; };
 		A25F0CD21CB3AD35005E5159 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A25F0CD11CB3AD35005E5159 /* MasterViewController.m */; };
 		A26F272A1CB4B56F0004CEF5 /* DataFromDataBase.m in Sources */ = {isa = PBXBuildFile; fileRef = A26F27291CB4B56F0004CEF5 /* DataFromDataBase.m */; };
+		A26F272D1CB527260004CEF5 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A26F272C1CB527260004CEF5 /* DetailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +80,8 @@
 		A25F0CD11CB3AD35005E5159 /* MasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
 		A26F27281CB4B56F0004CEF5 /* DataFromDataBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DataFromDataBase.h; path = ../../TvShowManage/TvShowManage/DataFromDataBase.h; sourceTree = "<group>"; };
 		A26F27291CB4B56F0004CEF5 /* DataFromDataBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DataFromDataBase.m; path = ../../TvShowManage/TvShowManage/DataFromDataBase.m; sourceTree = "<group>"; };
+		A26F272B1CB527260004CEF5 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		A26F272C1CB527260004CEF5 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +141,8 @@
 				A25F0CD11CB3AD35005E5159 /* MasterViewController.m */,
 				A25F0C8B1CB39348005E5159 /* ViewController.h */,
 				A25F0C8C1CB39348005E5159 /* ViewController.m */,
+				A26F272B1CB527260004CEF5 /* DetailViewController.h */,
+				A26F272C1CB527260004CEF5 /* DetailViewController.m */,
 				A26F27281CB4B56F0004CEF5 /* DataFromDataBase.h */,
 				A26F27291CB4B56F0004CEF5 /* DataFromDataBase.m */,
 				A25F0C8E1CB39348005E5159 /* Main.storyboard */,
@@ -346,6 +351,7 @@
 				A25F0C871CB39348005E5159 /* main.m in Sources */,
 				A25F0CCA1CB396B2005E5159 /* FMDatabase.m in Sources */,
 				A25F0CCE1CB396B2005E5159 /* FMResultSet.m in Sources */,
+				A26F272D1CB527260004CEF5 /* DetailViewController.m in Sources */,
 				A25F0CD21CB3AD35005E5159 /* MasterViewController.m in Sources */,
 				A26F272A1CB4B56F0004CEF5 /* DataFromDataBase.m in Sources */,
 				A25F0CCB1CB396B2005E5159 /* FMDatabaseAdditions.m in Sources */,

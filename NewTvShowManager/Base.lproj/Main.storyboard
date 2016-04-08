@@ -244,7 +244,7 @@
                         <outlet property="lastedSeason" destination="Ngu-WQ-WFv" id="P0r-0z-OXB"/>
                         <outlet property="lastedSeasonStepper" destination="5yh-IL-ebM" id="eXF-uO-yoZ"/>
                         <outlet property="nameField" destination="DBa-Vh-hXL" id="1Al-Yt-2dn"/>
-                        <outlet property="youeEpisode" destination="tcZ-qI-cq1" id="A4P-Rk-27N"/>
+                        <outlet property="yourEpisode" destination="tcZ-qI-cq1" id="10S-Ok-56t"/>
                         <outlet property="yourEpisodeStepper" destination="7g3-Bx-Qul" id="ORM-Qk-9JG"/>
                         <outlet property="yourSeason" destination="IhP-v6-6zr" id="7bg-Me-4bH"/>
                         <outlet property="yourSeasonStepper" destination="YxE-5b-vfS" id="DdJ-98-XAO"/>

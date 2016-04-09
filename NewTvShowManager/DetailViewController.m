@@ -11,17 +11,20 @@
 
 @interface DetailViewController()
 @property(nonatomic,strong)FMDatabase *db;
+
 @property (weak, nonatomic) IBOutlet UIStepper *yourEpisodeStepper;
 @property (weak, nonatomic) IBOutlet UIStepper *yourSeasonStepper;
 @property (weak, nonatomic) IBOutlet UIStepper *lastedSeasonStepper;
 @property (weak, nonatomic) IBOutlet UIStepper *lastedEpisodeStepper;
+
 @property (weak, nonatomic) IBOutlet UITextField *yourEpisode;
 @property (weak, nonatomic) IBOutlet UITextField *yourSeason;
 @property (weak, nonatomic) IBOutlet UITextField *introductionField;
-@property(nonatomic, strong)UILabel * lable;
 @property (weak, nonatomic) IBOutlet UITextField *nameField;
 @property (weak, nonatomic) IBOutlet UITextField *lastedSeason;
 @property (weak, nonatomic) IBOutlet UITextField *lastedEpisode;
+
+@property (strong,nonatomic)IBOutletCollection(UITextField) NSArray *saveData;
 @end
 
 @implementation DetailViewController
@@ -53,4 +56,41 @@
     }
     }
 }
+
+-(IBAction)stepperChanged:(UIStepper*)sender{
+    switch (sender.tag) {
+        case 0:
+            _lastedSeason.text = [NSString stringWithFormat:@"%d",(int)sender.value];
+            break;
+        case 1:
+            
+            _lastedEpisode.text = [NSString stringWithFormat:@"%d",(int)sender.value];
+            break;
+        case 2:
+            _yourSeason.text = [NSString stringWithFormat:@"%d",(int)sender.value];
+            break;
+        case 3:
+            _yourEpisode.text = [NSString stringWithFormat:@"%d",(int)sender.value];
+            break;
+        default:
+            break;
+    }
+
+    }
+
+-(void)query{
+    FMResultSet *resultSet = [self.db executeQuery:@"SELECT * FROM t_show"];
+    // 2.遍历结果
+    while ([resultSet next]) {
+        int ID = [resultSet intForColumn:@"id"];
+        NSString *name = [resultSet stringForColumn:@"name"];
+        NSString *introduction = [resultSet stringForColumn:@"introduction"];
+        NSString *lastDate = [resultSet stringForColumn:@"lastDate"];
+        NSLog(@"%d %@ %@ %@", ID, name, introduction,lastDate);
+        //[self.nameArray addObject:name];
+    }
+
+}
+
+
 @end

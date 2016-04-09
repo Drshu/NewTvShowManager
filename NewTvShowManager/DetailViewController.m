@@ -58,9 +58,11 @@
 }
 
 -(IBAction)stepperChanged:(UIStepper*)sender{
+   
     switch (sender.tag) {
         case 0:
             _lastedSeason.text = [NSString stringWithFormat:@"%d",(int)sender.value];
+            
             break;
         case 1:
             
@@ -78,19 +80,42 @@
 
     }
 
--(void)query{
-    FMResultSet *resultSet = [self.db executeQuery:@"SELECT * FROM t_show"];
-    // 2.遍历结果
-    while ([resultSet next]) {
-        int ID = [resultSet intForColumn:@"id"];
-        NSString *name = [resultSet stringForColumn:@"name"];
-        NSString *introduction = [resultSet stringForColumn:@"introduction"];
-        NSString *lastDate = [resultSet stringForColumn:@"lastDate"];
-        NSLog(@"%d %@ %@ %@", ID, name, introduction,lastDate);
-        //[self.nameArray addObject:name];
-    }
+-(IBAction)buttonPressed:(id)sender{
+    NSString *doc=[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
+    NSString *fileName=[doc stringByAppendingPathComponent:@"tvShow.sqlite"];
+    FMDatabase *db=[FMDatabase databaseWithPath:fileName];
+    
+    NSString *findStr = [NSString stringWithFormat:@"SELECT * FROM t_show where name = '%@'",self.showName];
+    [db open];
+    FMResultSet *resultSet = [db executeQuery:findStr];
+    
+    NSString *name = _nameField.text;
+    NSString *introduction = _introductionField.text;
+    NSString *lastedSeason = _lastedSeason.text;
+    NSString *lastedEpisod = _lastedEpisode.text;
+    NSString *yourSeason = _yourSeason.text;
+    NSString *yourEpisode= _yourEpisode.text;
+    
+    NSString *lastDate = [[NSString alloc] initWithString: [NSString stringWithFormat:@"S%@E%@",yourSeason,yourEpisode]];
+    
+    NSString *allDate = [[NSString alloc] initWithString: [NSString stringWithFormat:@"S%@E%@",lastedSeason,lastedEpisod]];
+    
+    if ([db open]) {
+        while ([resultSet next]) {
+            NSString *updateSql = [NSString stringWithFormat:@"update t_show set name ='%@' ,introduction = '%@' ,lastDate = '%@' ,allDate = '%@' where name ='%@'",name,introduction,lastDate,allDate,self.showName];
 
+            BOOL res = [db executeUpdate:updateSql];
+            
+            if (!res) {
+                NSLog(@"error when insert db table");
+            } else {
+                NSLog(@"success to insert db table");
+            }
+        }
+    }
+    
 }
+
 
 
 @end

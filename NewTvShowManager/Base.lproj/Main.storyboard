@@ -201,6 +201,13 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sSs-Ci-mGW">
+                                <rect key="frame" x="291" y="537" width="30" height="30"/>
+                                <state key="normal" title="更新"/>
+                                <connections>
+                                    <action selector="buttonPressed:" destination="K8B-3p-WD2" eventType="touchUpInside" id="UVF-1t-qjI"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -222,6 +229,7 @@
                             <constraint firstItem="d3G-HT-vsH" firstAttribute="leading" secondItem="YxE-5b-vfS" secondAttribute="leading" id="Lj5-o4-wDc"/>
                             <constraint firstItem="7g3-Bx-Qul" firstAttribute="top" secondItem="YxE-5b-vfS" secondAttribute="bottom" constant="31" id="Q9z-GQ-YdN"/>
                             <constraint firstItem="DBa-Vh-hXL" firstAttribute="top" secondItem="n17-j3-UF9" secondAttribute="bottom" constant="38" id="R2A-7d-TAp"/>
+                            <constraint firstItem="sSs-Ci-mGW" firstAttribute="top" secondItem="tcZ-qI-cq1" secondAttribute="bottom" constant="27" id="Syv-iR-68I"/>
                             <constraint firstItem="IeH-7u-dya" firstAttribute="leading" secondItem="AYf-ga-BVf" secondAttribute="leading" id="Vo6-QF-BgE"/>
                             <constraint firstItem="5yh-IL-ebM" firstAttribute="top" secondItem="E3F-SQ-DMX" secondAttribute="bottom" constant="62" id="WTj-hJ-Khe"/>
                             <constraint firstItem="Ngu-WQ-WFv" firstAttribute="trailing" secondItem="Pp9-sB-BUD" secondAttribute="trailing" id="Wer-tm-0pT"/>
@@ -244,6 +252,7 @@
                             <constraint firstItem="PvU-hV-rpp" firstAttribute="leading" secondItem="kgG-LI-43W" secondAttribute="leading" id="rNt-pS-V7f"/>
                             <constraint firstItem="DBa-Vh-hXL" firstAttribute="trailing" secondItem="CxM-S2-zv1" secondAttribute="trailingMargin" id="sUe-k3-GYw"/>
                             <constraint firstItem="Jm7-f4-5EO" firstAttribute="top" secondItem="Pp9-sB-BUD" secondAttribute="bottom" constant="22" id="t42-gp-Nm0"/>
+                            <constraint firstItem="sSs-Ci-mGW" firstAttribute="centerX" secondItem="tcZ-qI-cq1" secondAttribute="centerX" id="vWM-5W-aoe"/>
                             <constraint firstItem="kgG-LI-43W" firstAttribute="leading" secondItem="PKd-UR-TKt" secondAttribute="leading" id="yIf-8Z-Omg"/>
                             <constraint firstItem="DBa-Vh-hXL" firstAttribute="trailing" secondItem="E3F-SQ-DMX" secondAttribute="trailing" id="yct-9T-3KA"/>
                         </constraints>

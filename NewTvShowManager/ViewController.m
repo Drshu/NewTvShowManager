@@ -128,10 +128,10 @@ static NSString *SectionsTableIdentifier = @"SectionsTableIdentifier";
         introductionField.placeholder = @"简单的介绍";
     }];
     [alert addTextFieldWithConfigurationHandler:^(UITextField *seasonField){
-        seasonField.placeholder = @"你看到第几季啦~";
+        seasonField.placeholder = @"你看到第几季啦~两位数噢，例：01";
     }];
     [alert addTextFieldWithConfigurationHandler:^(UITextField *episodeField){
-        episodeField.placeholder = @"你看到第几集啦~";
+        episodeField.placeholder = @"你看到第几集啦~两位数噢，例：01";
     }];
     UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"不玩了！"
                                                            style:UIAlertActionStyleCancel
@@ -220,6 +220,10 @@ static NSString *SectionsTableIdentifier = @"SectionsTableIdentifier";
 
 }
 
+-(BOOL)tableView:(UITableView*)tableView
+canEditRowAtIndexPath:(NSIndexPath *)indexPath{
+    return YES;
+}
 
 #pragma -
 #pragma Navigation

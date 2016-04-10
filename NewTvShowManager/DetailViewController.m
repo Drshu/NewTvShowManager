@@ -46,13 +46,24 @@
         NSString *name = [resultSet stringForColumn:@"name"];
         NSString *introduction = [resultSet stringForColumn:@"introduction"];
         NSString *lastDate = [resultSet stringForColumn:@"lastDate"];
+        NSString *allDate = [resultSet stringForColumn:@"allDate"];
         NSLog(@"%@ %@ %@", name, introduction,lastDate);
+        
+        //提取数据后显示在文本框中
         self.nameField.text = name;
         self.introductionField.text = introduction;
-        NSString *yourseasonNumber = [lastDate substringWithRange:NSMakeRange(2, 2)];
-        NSString *yourEpisodeNmeber = [lastDate substringWithRange:NSMakeRange(5, 2)];
-        self.lastedSeason.text = yourseasonNumber;
-        self.lastedEpisode.text = yourEpisodeNmeber;
+        
+        NSString *yourseasonNumber = [lastDate substringWithRange:NSMakeRange(1, 2)];
+        NSString *yourEpisodeNmeber = [lastDate substringWithRange:NSMakeRange(4, 2)];
+        self.yourSeason.text = yourseasonNumber;
+        self.yourEpisode.text = yourEpisodeNmeber;
+        
+        NSString *lastSeasonnNumber =[allDate substringWithRange:NSMakeRange(1,2)];
+        NSString *lastEpisodeNumber = [allDate substringWithRange:NSMakeRange(4, 2)];;
+        
+        self.lastedSeason.text = lastSeasonnNumber;
+        self.lastedEpisode.text = lastEpisodeNumber;
+        
     }
     }
 }
@@ -96,6 +107,7 @@
     NSString *yourSeason = _yourSeason.text;
     NSString *yourEpisode= _yourEpisode.text;
     
+
     NSString *lastDate = [[NSString alloc] initWithString: [NSString stringWithFormat:@"S%@E%@",yourSeason,yourEpisode]];
     
     NSString *allDate = [[NSString alloc] initWithString: [NSString stringWithFormat:@"S%@E%@",lastedSeason,lastedEpisod]];
